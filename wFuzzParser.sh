@@ -20,11 +20,12 @@ do
    redirectIndicator=$(echo $line | awk '{print $10}' | grep -o "\(\*\)")
    if [ -n "$redirectIndicator" ];
    then
-    url=$(echo $line | awk '{print $11}')
+    url=$(echo $line | awk '{print $12}') #NOT VALIDATED, W8 TO GET NEW SCAN WITH REDIRS THEN UNCOMMENT TESTSTRING AND CHECK
    else
-    url=$target"/"$(echo $line | awk '{print $12}' | sed 's/"$//g;s/^\///g')
+    url=$target"/"$(echo $line | awk '{print $11}' | sed 's/"$//g;s/^\///g')
    fi
    echo $url >> TEMP$httpCode"UrlList.txt"
+   #TESTSTRING
    #echo "$( echo $line | awk '{print $10 " @ "$11 " @ "  $12 }')"
   fi
   echo "$line" >> "processed_"$httpCode"Codes.txt"
