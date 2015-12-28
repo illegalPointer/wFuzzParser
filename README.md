@@ -7,9 +7,13 @@ $httpCodeUrlList.txt --> Url constructed from the following $httpCode
 processed_$httpCodeCodes.txt --> Raw response from wfuzz to $httpCode
 
 @TODO Extract $target correctly 
+
 @TODO ¿Launch wfuzz?
+
 @TODO Usage
+
 @TODO Friendly result files
+
 
 Note: In some cases (E. Kali Linux) Wfuzz needs to be edited in order to work properly:
 
