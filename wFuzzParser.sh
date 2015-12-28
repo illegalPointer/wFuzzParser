@@ -22,7 +22,7 @@ do
    then
     url=$(echo $line | awk '{print $12}') #NOT VALIDATED, W8 TO GET NEW SCAN WITH REDIRS THEN UNCOMMENT TESTSTRING AND CHECK
    else
-    url=$target"/"$(echo $line | awk '{print $11}' | sed 's/"$//g;s/^\///g')
+    url=$target"/"$(echo $line | awk '{print $11}' | sed 's/[" \t]*$//g;s/"//g;s/\^\///g')
    fi
    echo $url >> TEMP$httpCode"UrlList.txt"
    #TESTSTRING
